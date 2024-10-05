@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="163.839" height="163.839" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 1707 1707" id="pencil">
+  <defs>
+    <linearGradient id="a" x1="-69.921" x2="1776.57" y1="83.957" y2="1622.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08b6ff"></stop>
+      <stop offset=".012" stop-color="#2790ff"></stop>
+      <stop offset=".259" stop-color="#47c7ff"></stop>
+      <stop offset=".478" stop-color="#4cc9ff"></stop>
+      <stop offset=".8" stop-color="#4a9eff"></stop>
+      <stop offset=".929" stop-color="#466aff"></stop>
+      <stop offset="1" stop-color="#466aff"></stop>
+    </linearGradient>
+  </defs>
+  <path fill="url(#a)" d="M478 1568c-4,0 -9,-2 -12,-5l-323 -323c-3,-3 -4,-7 -4,-11 0,-5 1,-9 4,-12l1046 -1046 346 347 -1045 1045c-3,3 -7,5 -12,5zm-461 139c-12,0 -20,-12 -16,-23l140 -399 280 280 -399 141c-2,0 -3,1 -5,1zm578 -394c-4,0 -8,-2 -12,-5l-185 -185c-3,-3 -4,-7 -4,-11 0,-5 1,-9 4,-12l694 -694c3,-3 8,-5 12,-5 4,0 9,2 12,5l92 92 0 0 0 1 93 92c6,6 6,17 0,23l-694 694c-3,3 -8,5 -12,5zm-92 -133l670 -670 -69 -69 -670 671 69 68zm693 -646l-670 670 69 69 670 -670 -69 -69zm17 -386l142 -143c3,-3 8,-5 12,-5 4,0 9,2 12,5l323 323c6,6 6,17 0,23l-143 143 -346 -346z"></path>
+</svg>
