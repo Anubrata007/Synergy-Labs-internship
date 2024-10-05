@@ -32,7 +32,10 @@ const UserTable: React.FC = () => {
   };
 
   const handleUserCreate = (newUser: User) => {
-    setUsers((prevUsers) => [...prevUsers, newUser]);
+    const newId =
+      users.length > 0 ? Math.max(...users.map((user) => user.id)) + 1 : 1;
+    const userWithId = { ...newUser, id: newId };
+    setUsers((prevUsers) => [...prevUsers, userWithId]);
   };
 
   const handleUserDelete = async (userId: number) => {
@@ -83,8 +86,8 @@ const UserTable: React.FC = () => {
         <thead>
           <tr className="bg-gray-800 text-white">
             <th className="border p-2">Name</th>
-            <th className="border p-2">Email</th>
-            <th className="border p-2">Phone</th>
+            <th className="border p-2 hidden sm:table-cell">Email</th>
+            <th className="border p-2 hidden sm:table-cell">Phone</th>
             <th className="border p-2">Actions</th>
           </tr>
         </thead>
@@ -100,8 +103,8 @@ const UserTable: React.FC = () => {
               >
                 {user.name}
               </td>
-              <td className="border p-2">{user.email}</td>
-              <td className="border p-2">{user.phone}</td>
+              <td className="border p-2 hidden sm:table-cell">{user.email}</td>
+              <td className="border p-2 hidden sm:table-cell">{user.phone}</td>
               <td className="border p-2">
                 <div className="flex items-center justify-center gap-4">
                   <button

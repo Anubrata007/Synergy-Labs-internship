@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { User } from "../types";
 import axios from "axios";
-import { CirclePlus } from "lucide-react";
-import { X } from "lucide-react";
+import Add from "../assets/add.png";
+import Delete from "../assets/rejected.png";
 
 interface UserFormProps {
   userId?: number | null; // Allow userId to be null or undefined
@@ -25,16 +25,22 @@ const UserForm: React.FC<UserFormProps> = ({ userId, onSubmit, onClose }) => {
         setName(user.name);
         setEmail(user.email);
         setPhone(user.phone);
+      } else {
+        setName("");
+        setEmail("");
+        setPhone("");
       }
     };
 
-    fetchUser();
+    if (userId) {
+      fetchUser();
+    }
   }, [userId]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newUser: User = {
-      id: userId || 0, // Assign a temporary ID
+      id: userId ?? 0, // Assign a temporary ID
       name,
       email,
       phone,
@@ -44,48 +50,41 @@ const UserForm: React.FC<UserFormProps> = ({ userId, onSubmit, onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col p-4">
       <div className="flex flex-col gap-3">
-        <div className="flex gap-3 items-center">
-          <label>Name :</label>
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="border-solid border-0 border-b border-gray-500 focus:outline-none"
+            className="border rounded-xl border-gray-500 focus:outline-none px-2 w-full sm:w-auto"
+            placeholder="Enter name"
           />
         </div>
-        <div className="flex gap-3 items-center">
-          <label>Email :</label>
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="border-solid border-0 border-b border-gray-500 focus:outline-none"
+            className="border rounded-xl border-gray-500 focus:outline-none px-2 w-full sm:w-auto"
+            placeholder="Enter email"
           />
         </div>
-        <div className="flex gap-3 items-center">
-          <label>Phone :</label>
+        <div className="flex flex-col sm:flex-row gap-4 items-center">
           <input
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
-            className="border-solid border-0 border-b border-gray-500 focus:outline-none"
+            className="border rounded-xl border-gray-500 focus:outline-none px-2 w-full sm:w-auto"
+            placeholder="Enter phone"
           />
         </div>
-        <div className="flex my-2 p-1 justify-end gap-5">
-          <button
-            type="submit"
-            className="bg-teal-600 text-white border rounded-full p-1"
-          >
-            <CirclePlus />
+        <div className="flex my-1 p-1 justify-end gap-5">
+          <button type="submit" className="flex items-center">
+            <img className="h-8 w-8" src={Add} alt="Pencil" />
           </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="bg-teal-600 text-white border rounded-full p-1"
-          >
-            <X />
+          <button type="button" onClick={onClose} className="flex items-center">
+            <img className="h-8 w-8" src={Delete} alt="Delete" />
           </button>
         </div>
       </div>

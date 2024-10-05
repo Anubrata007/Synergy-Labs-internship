@@ -16,7 +16,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ user, onClose }) => {
       <p>Phone: {user.phone}</p>
       <button
         onClick={onClose}
-        className="bg-teal-600 text-white p-2 rounded mt-4"
+        className="bg-teal-600 text-white p-2 rounded mt-4 font-bold"
       >
         Close
       </button>
